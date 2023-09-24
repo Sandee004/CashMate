@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+*{
+    margin: 0;
+}
+body{
+    background-color: white;
+    font-family: 'Roboto';
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    background: #63B76C;
+    padding: 10px;
+}
+.nav h4{
+    padding: 10px;
+    vertical-align: middle;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+}
+p{
+    font-size: 16px;
+    margin: auto 22px;
+}
+.QR{
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+.qrcode-box{
+    border: 0.5px solid black;
+    background: transparent;
+    text-align: center;
+    border-radius: 5px;
+    height: 180px;
+    width: 180px;
+    display: block;
+    margin: 22px auto;
+    position: relative;
+}
+#qrcode{
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+}
+#acc-no{
+    font-size: 28px;
+    text-align: center;
+    margin: 15px;
+}

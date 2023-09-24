@@ -5,25 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profiles</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='profiles.css') }}">
 </head>
 <body>
     <h5>Profiles</h5>
-    {% for account in accounts %}
-        <div class="profile">
-            <p>Fullname: {{ account.fullname }}</p>
-            <p>Username: {{ account.username }}</p>
-            <p>Phone: {{ account.phone }}</p>
-            <p>Email: {{ account.email }}</p>
-            <p>Password: {{ account.password }}</p>
-            <form method="POST" action="{{ url_for('profiles') }}">
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Username</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Card Number</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for accounts in accounts %}
+            <tr>
+            <td>{{accounts.fullname}}</td>
+            <td>{{accounts.username}}</td>
+            <td>{{accounts.phone}}</td>
+            <td>{{accounts.email}}</td>
+            <td>{{accounts.card_no}}</td>
+            <td>{{accounts.password}}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('profiles') }}">
                 <!-- Include the CSRF token -->
                 {% raw %}
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 {% endraw %}
-                <input type="hidden" name="user_id" value="{{ account.id }}">
+                <input type="hidden" name="user_id" value="{{ accounts.id }}">
                 <button type="submit">Delete</button>
-            </form>
-        </div>
-    {% endfor %}
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>

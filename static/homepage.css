@@ -20,3 +20,68 @@ body{
     line-height: 1;
     text-align: center;
 }
+.card{
+    background: black;
+    width: 260px;
+    height: 160px;
+    border-radius: 6px;
+    color: silver;
+    margin: auto;
+}
+/*.top{
+    padding: 15px 4px auto 4px;
+}*/
+.virtual{
+    padding: 8px 3px auto 6px;
+    text-align: left;
+}
+#cvv{
+    display: inline;
+}
+#card-number{
+    margin: auto 5px;
+}
+.cardholder{
+    font-size: 15px;
+    margin: auto 5px;
+}
+#card-name{
+    margin: auto 5px;
+}
+#transactions, #analytics{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    margin: 8px auto 3px;
+    padding: 5px;
+    color: white;
+}
+#transactions:focus, #analytics:focus{
+    background: ghostwhite;
+    color: black;
+}
+#transactions-div, #analytics-div{
+    background: pink;
+    height: 300px;
+    width: 90%;
+    margin: 0 auto;
+}
+#analytics-div{
+    display: none;
+}
+#weeks, #months{
+    background: #63B76C;
+    border: 0.5px solid black;
+    outline: none;
+    border-radius: 4px;
+    padding: 8px 9px;
+    color: white;
+    margin: 5px;
+}
+#months-div{
+    display: none;
+}
+#transactions-div:active, #analytics-div:active, #weeks-div:active, #months-div:active{
+    display: block;
+}

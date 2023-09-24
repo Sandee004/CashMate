@@ -6,10 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
 </head>
 <body>
     <div class="nav">
         <h4>Wallet</h4>
     </div>
-    
+
+    <div class="card">
+        <p class="top">
+            <a class="virtual">VIRTUAL</a>
+            <a id="cvv">1234</a>
+        </p>
+        <p id="card-number">{{card_no}}</p>
+        <p class="cardholder"></p>
+        <p class="card-name">{{full_name}}</p>
+    </div>
+
+    <div class="footer">
+        <button id="transactions">Transactions</button>
+        <button id="analytics">Analytics</button>
+        <div id="transactions-div"></div>
+        <div id="analytics-div">
+            <h3>May 2023</h3>
+            <button id="weeks">Weeks</button>
+            <button id="months">Months</button>
+            <div id="weeks-div">
+                <canvas id="weeks-bar"></canvas>
+            </div>
+            <div id="months-div">
+                <canvas id="months-bar"></canvas>
+            </div>
+        </div>
+
+        
+    </div>
+        
+        
+
+<script src="{{url_for('static', filename='homepage.js')}}"></script>
 </body>

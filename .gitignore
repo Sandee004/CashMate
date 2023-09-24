@@ -1,0 +1,12 @@
+venv
+instance
+flask_session
+.config
+.upm
+.pythonlibs
+.git
+.replit.nix
+.replit
+.pyproject.toml
+.users.sqlite3
+.poetry.lock

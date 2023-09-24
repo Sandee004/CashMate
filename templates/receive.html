@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='receive.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2"></script>
+</head>
+<body>
+    <div class="nav">
+        <h4>Receive Money</h4>
+    </div>
+    
+    <p class="QR">QR Code</p>
+    <p class="info">Show this QR Code or share magic link to the sender to receive the money. It has your account details.</p>
+
+    <div class="qrcode-box">
+        <canvas id="qrcode"></canvas>
+    </div>
+    
+
+    <p class="QR">Account Number</p>
+    <p class="info">Pls note that this is subject to change. Do not use the same account number twice.</p>
+    <p id="acc-no" onclick="copyToClipboard(this.textContent)"></p>
+    <script src="{{ url_for('static', filename='receive.js') }}"></script>
+</body>
