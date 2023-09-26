@@ -9,16 +9,26 @@ body{
     margin: 0;
     padding: 0;
 }
-.nav{
-    background: #63B76C;
-    padding: 10px;
+.nav {
+    background: transparent;
+    border-bottom: 1px solid silver;
+    padding: 15px;
+    display: flex;
+    align-items: center;
 }
-.nav h4{
-    padding: 10px;
-    vertical-align: middle;
+
+.nav a {
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.nav h3 {
     margin: 0;
     line-height: 1;
     text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 p{
     font-size: 16px;

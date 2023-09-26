@@ -7,10 +7,7 @@ body{
     font-family: 'Roboto';
     color: black;
     text-align: center;
-    /*align-items: center;
-    justify-content: center;*/
    /* color: #74C365;*/
-    /*The one I'm using - #63B76C*/
 }
 h1{
     margin: 72px auto auto;
@@ -39,4 +36,8 @@ input:focus{
     background:  #63B76C;
     border: none;
     color: black;
+}
+ul, li{
+    list-style-type: none;
+    text-align: center;
 }
