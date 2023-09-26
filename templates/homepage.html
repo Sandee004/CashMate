@@ -7,26 +7,44 @@
     <title>Registration</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
+    <script src="https://kit.fontawesome.com/6bd9574680.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="nav">
-        <h4>Wallet</h4>
+        <h3>Wallet</h3>
     </div>
 
     <div class="card">
         <p class="top">
-            <a class="virtual">VIRTUAL</a>
-            <a id="cvv">1234</a>
+            <span class="virtual">VIRTUAL</span>
+            <span id="cvv">1234</span>
         </p>
         <p id="card-number">{{card_no}}</p>
-        <p class="cardholder"></p>
+        <p class="cardholder">CARDHOLDER</p>
         <p class="card-name">{{full_name}}</p>
+    </div>
+
+    <div class="balance">
+        <p class="total">TOTAL BALANCE</p>
+        <p class="currency">
+            <span class="bal">63420.68</span>
+            <span>USD</span>
+        </p>
+        <a href="{{url_for('send')}}" class="send">Send</a>
+        <a href="{{url_for('receive')}}" class="receive">Receive</a>
     </div>
 
     <div class="footer">
         <button id="transactions">Transactions</button>
         <button id="analytics">Analytics</button>
-        <div id="transactions-div"></div>
+        <div id="transactions-div">
+            <div class="transaction">
+                <div class="outgoing">
+                    <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
+                <div>
+                <h4>Money sent</h4>
+            </div>
+        </div>
         <div id="analytics-div">
             <h3>May 2023</h3>
             <button id="weeks">Weeks</button>
@@ -38,11 +56,10 @@
                 <canvas id="months-bar"></canvas>
             </div>
         </div>
-
-        
     </div>
         
         
 
-<script src="{{url_for('static', filename='homepage.js')}}"></script>
+<script src="{{url_for('static', filename='homepage.js')}}">
+</script>
 </body>

@@ -1,4 +1,5 @@
-import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 *{
     margin: 0;
 }
@@ -20,68 +21,122 @@ body{
     line-height: 1;
     text-align: center;
 }
-.card{
-    background: black;
-    width: 260px;
-    height: 160px;
-    border-radius: 6px;
-    color: silver;
-    margin: auto;
+
+.card {
+  background: black;
+  width: 260px;
+  height: 150px;
+  border-radius: 5px;
+  color: silver;
+    position: relative;
+    margin: 15px auto;
+  padding: 3px;
+    font-size: 15px;
 }
-/*.top{
-    padding: 15px 4px auto 4px;
-}*/
-.virtual{
-    padding: 8px 3px auto 6px;
-    text-align: left;
+
+.top {
+  position: relative;
+  margin-top: 8px;
 }
-#cvv{
-    display: inline;
+
+.virtual {
+  position: absolute;
+  top: 0;
+  left: 12px;
 }
-#card-number{
-    margin: auto 5px;
+
+#cvv {
+  position: absolute;
+  top: 0;
+  right: 12px;
+}
+
+#card-number {
+    font-family: 'Space Mono', monospace;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
 }
 .cardholder{
-    font-size: 15px;
-    margin: auto 5px;
+    position: absolute;
+    left: 12px;
+    bottom: 25px;
+    font-size: 11px;
 }
-#card-name{
-    margin: auto 5px;
+
+.card-name {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+}
+.balance{
+    text-align: center;
+    color: #63B76C;
+    margin: 30px auto 15px;
+}
+.total{
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+.currency{
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.bal{
+    color: black;
+}
+.send, .receive{
+    text-decoration: none;
+    color: black;
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 17px;
+    padding: 8px 12px;
+    margin: 0 5px;
+    font-size: 17px;
+}
+.send:hover, .receive:hover{
+    background: #63B76C;
+    border: none;
 }
 #transactions, #analytics{
     background: transparent;
     border: none;
-    outline: none;
     font-size: 19px;
-    margin: 8px auto 3px;
-    padding: 5px;
-    color: white;
-}
-#transactions:focus, #analytics:focus{
-    background: ghostwhite;
+    margin: 12px 0px 0px 11px;
+    padding: 8px 10px;
     color: black;
 }
 #transactions-div, #analytics-div{
-    background: pink;
+    background: white;
     height: 300px;
     width: 90%;
     margin: 0 auto;
+    color: black;
+    display: block;
 }
 #analytics-div{
     display: none;
 }
-#weeks, #months{
-    background: #63B76C;
-    border: 0.5px solid black;
+.outgoing{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 50%;
+}⁹8888⁸
+#weeks, #months{9999⁹
+    background: transparent;
     outline: none;
     border-radius: 4px;
     padding: 8px 9px;
-    color: white;
-    margin: 5px;
+    color: black;
+    margin: 5px auto 10px;
 }
 #months-div{
     display: none;
-}
-#transactions-div:active, #analytics-div:active, #weeks-div:active, #months-div:active{
-    display: block;
 }

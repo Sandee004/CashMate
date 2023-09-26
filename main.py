@@ -57,7 +57,8 @@ def register():
         email = request.form.get('email')
         password = request.form.get('password')
         mask = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-        card_no = str(random.randint(10**15,(10**16)-1))
+        cardNumber = str(random.randint(10**15,(10**16)-1))
+        card_no = ' '.join(cardNumber[i:i+4] for i in range(0, len(cardNumber), 4))
         
         existing_user = Users.query.filter_by(username=username).first()
         if existing_user:
@@ -118,8 +119,9 @@ def homepage():
 def profiles():
     if request.method == "POST":
         user_id = request.form.get("user_id")
-        session = Session()
-        user = session.get(Users, user_id)
+        user = Users.query.get(user_id)
+        #session = Session()
+        #user = session.get(Users, user_id)
         if user:
             db.session.delete(user)
             db.session.commit()

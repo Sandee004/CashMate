@@ -1,37 +1,37 @@
-function generateAccountNumber() {
-  var accountNumber = '';
-  var digits = '0123456789';
-
-  for (var i = 0; i < 16; i++) {
-    var randomIndex = Math.floor(Math.random() * digits.length);
-    accountNumber += digits[randomIndex];
-  }
-  return accountNumber;
-}
-
-// Function to run when the page finishes loading
+//Function to run when the page finishes loading
 function onPageLoad() {
-  var accountNumber = generateAccountNumber();
-  document.getElementById('card-number').innerHTML = accountNumber;
+ // var accountNumber = generateAccountNumber();
+ // document.getElementById('card-number').innerHTML = accountNumber;
 
 var transactionsBtn = document.getElementById('transactions');
 var analyticsBtn = document.getElementById('analytics');
 var analytics = document.getElementById('analytics-div');
 var transactions = document.getElementById('transactions-div');
 
+    transactions.style.display = "block"
+    analytics.style.display = "none"
+    transactionsBtn.style.textDecoration = "underline"
+    transactionsBtn.style.textDecorationColor = "silver"
+
+
 transactionsBtn.addEventListener("click", function() {
     transactions.style.display = "block"
     analytics.style.display = "none"
+    transactionsBtn.style.textDecoration = "underline"
+    transactionsBtn.style.textDecorationColor = "silver"
+    analyticsBtn.style.textDecoration = "none"
 })
 
 analyticsBtn.addEventListener("click", function () {
     transactions.style.display = "none"
     analytics.style.display = "block"
-}
-)
+    analyticsBtn.style.textDecoration = "underline"
+    analyticsBtn.style.textDecorationColor = "silver"
+    transactionsBtn.style.textDecoration = "none"
+})
+    
 
-
-//Months bar
+//Months bars
         var data = {
     labels: ['January', 'February', 'March', 'April', 'May'],
     datasets: [
@@ -108,7 +108,7 @@ var options = {
     },
     plugins: {
         legend: {
-            position: 'top'
+            position: 'top',
         },
         layout: {
             padding: {
@@ -129,53 +129,28 @@ var barChart = new Chart(document.getElementById('weeks-bar'), {
     data: data,
     options: options
 });
-
-    
-// Configuration options for the bar chart
-var options = {
-    responsive: true,
-    scales: {
-        y: {
-            beginAtZero: true
-        }
-    },
-    plugins: {
-        legend: {
-            position: 'top'
-        },
-        layout: {
-            padding: {
-                left: 10,
-                right: 10,
-                top: 20,
-                bottom: 20
-            }
-        }
-    },
-    barPercentage: 0.6, // Adjust the bar width as needed
-    categoryPercentage: 0.2 // Adjust the spacing between bars as needed
-};
-
-// Create the bar chart
-var barChart = new Chart(document.getElementById('days-bar'), {
-    type: 'bar',
-    data: data,
-    options: options
-});
-
+        
 
 var weeksBtn = document.getElementById('weeks');
 var monthsBtn = document.getElementById('months');
 var weeksDiv = document.getElementById('weeks-div');
 var monthsDiv = document.getElementById('months-div');
 
+weeksBtn.style.border = "1.5px solid black"
+monthsBtn.style.border = "0.5px solid black"
+    
 weeksBtn.addEventListener("click", function() {
     weeksDiv.style.display = "block";
     monthsDiv.style.display = "none"
+    weeksBtn.style.border = "1.5px solid black"
+monthsBtn.style.border = "0.5px solid black"
+    
 })
 monthsBtn.addEventListener("click", function() {
     weeksDiv.style.display = "none"
     monthsDiv.style.display = "block"
+    weeksBtn.style.border = "0.5px solid black"
+monthsBtn.style.border = "1.5px solid black"
 })
     }
 
