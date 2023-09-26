@@ -37,7 +37,7 @@ p{
     height: 180px;
     width: 180px;
     display: block;
-    margin: 22px auto;
+    margin: 30px auto;
     position: relative;
 }
 #qrcode{
@@ -46,8 +46,21 @@ p{
     bottom: 50%;
     transform: translate(-50%, -50%);
 }
+.acct{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
 #acc-no{
     font-size: 28px;
-    text-align: center;
-    margin: 15px;
+    display: inline;
+    margin: 0;
+}
+.clipboardBtn{
+    border: none;
+    background: transparent;
+    outline: none;
+    vertical-align: middle;
+    margin-left: 5px;
 }

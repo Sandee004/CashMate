@@ -1,26 +1,24 @@
-// Get references to the input field, keypad buttons container, and backspace button
-const inputField = document.getElementById("inputField");
-const keypadButtons = document.getElementById("keypadButtons");
-const backspaceButton = document.getElementById("backspaceButton");
+var pin1= document.getElementById("pin1");
+var pin2= document.getElementById("pin2");
+var pin3= document.getElementById("pin3");
+var pin4= document.getElementById("pin4");
+const btn= document.getElementById("btn");
+var a= document.getElementById("submit");
 
-// Event listener for input field click
-inputField.addEventListener("click", () => {
-  keypadButtons.style.display = "block";
-});
+        a.originalLink= a.href
 
-// Generate the keypad buttons dynamically
-buttons.forEach(button => {
-  const buttonElement = document.createElement("div");
-  buttonElement.classList.add("button");
-  buttonElement.textContent = button;
-  buttonElement.addEventListener("click", () => {
-    inputField.value += button;
-  });
-  keypadButtons.appendChild(buttonElement);
-});
+        function movetoNext(current, nextFieldID) {  
+            if (current.value.length >= current.maxLength){  
+            document.getElementById(nextFieldID).focus();  
+            }  
+        }
 
-// Add functionality to the backspace button
-backspaceButton.addEventListener("click", () => {
-  inputField.value = inputField.value.slice(0, -1);
-});
-    
+        btn.addEventListener("click", function() {
+            if (pin4.value.length < 1){
+                alert("Pin should be 4 digits!!!")
+                a.href= 'javascript:void(0)';
+            }
+            else{
+            a.href= a.originalLink;
+            }
+        })

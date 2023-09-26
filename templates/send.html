@@ -4,47 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Send Money</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='send.css') }}">
 </head>
 <body>
     <div class="nav">
-        <h4>Receive Money</h4>
+        <h3>Send Money</h3>
     </div>
-<div id="keypad">
-  <input type="text" id="inputField" readonly>
-  <div id="keypadButtons">
-    <!-- Keypad buttons will be dynamically generated using JavaScript -->
-  </div>
-  <!--div id="backspaceButton" class="button">
-    Bksp
-</div-->
-</div>
-    <script>
-        //JS for screen keypad
-const buttons = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-
-// Get references to the input field, keypad buttons container, and backspace button
-const inputField = document.getElementById("inputField");
-const keypadButtons = document.getElementById("keypadButtons");
-const backspaceButton = document.getElementById("backspaceButton");
-
-// Generate the keypad buttons dynamically
-buttons.forEach(button => {
-    const buttonElement = document.createElement("div");
-    buttonElement.classList.add("button");
-    buttonElement.textContent = button;
-    buttonElement.addEventListener("click", () => {
-        inputField.value += button;
-    });
-    keypadButtons.appendChild(buttonElement);
-});
-
-// Add functionality to the backspace button
-backspaceButton.addEventListener("click", () => {
-    inputField.value = inputField.value.slice(0, -1);
-});
-    </script>
+    <div class="input-wrap">
+            <input id="pin1" class="pin" name="pincode" type="password" inputmode="numeric" maxlength="1" onkeyup="movetoNext(this, 'pin2')" required>
+            <input id="pin2" class="pin" name="pincode" type="password" inputmode="numeric" maxlength="1" onkeyup="movetoNext(this, 'pin3')" required>
+            <input id="pin3" class="pin" name="pincode" type="password" inputmode="numeric" maxlength="1" onkeyup="movetoNext(this, 'pin4')" required>
+            <input id="pin4" class="pin" name="pincode" type="password" inputmode="numeric" maxlength="1" required>
+    </div>
+        <a id="submit" href="{{url_for('homepage')}}">
+            <button id="btn">Send</button>
+        </a>
+    <script src="{{url_for('static', filename='send.js')}}"></script>
 </body>
 
 

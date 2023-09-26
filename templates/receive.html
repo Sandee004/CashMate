@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='receive.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2"></script>
+    <script src="https://kit.fontawesome.com/6bd9574680.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="nav">
@@ -24,6 +25,12 @@
 
     <p class="QR">Account Number</p>
     <p class="info">Pls note that this is subject to change. Do not use the same account number twice.</p>
-    <p id="acc-no" onclick="copyToClipboard(this.textContent)"></p>
+
+    <div class="acct">
+        <p id="acc-no" onclick="copyToClipboard(this.textContent)"></p>
+        <button class="clipboardBtn">
+            <i class="fa-regular fa-copy" id="clipboard" style="color: #000000;"></i>
+        </button>
+    </div>
     <script src="{{ url_for('static', filename='receive.js') }}"></script>
 </body>

@@ -19,7 +19,15 @@
             <span class="virtual">VIRTUAL</span>
             <span id="cvv">1234</span>
         </p>
-        <p id="card-number">{{card_no}}</p>
+            <!--p id="card-number">{{card_no}}</p-->
+            <p id="card-number" data-full-number="{{card_no}}"></p>
+        
+        <div class="icon">
+            <button class="clipboardBtn">
+                <i class="fa-regular fa-copy" id="clipboard" style="color: #63B76C;"></i>
+            </button>
+        </div>
+                
         <p class="cardholder">CARDHOLDER</p>
         <p class="card-name">{{full_name}}</p>
     </div>
@@ -41,10 +49,40 @@
             <div class="transaction">
                 <div class="outgoing">
                     <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
-                <div>
-                <h4>Money sent</h4>
+                </div>
+                <h4>Uber</h4>
+                <p class="amt">-$50</p>
             </div>
-        </div>
+            <div class="transaction">
+                <div class="outgoing">
+                    <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
+                </div>
+                <h4>McDonalds</h4>
+                <p class="amt">-$300</p>
+            </div>
+            <div class="transaction">
+                <div class="outgoing">
+                    <i class="fa-solid fa-arrow-down" style="color: #000000;"></i>
+                </div>
+                <h4>Salary</h4>
+                <p class="amt">+$550</p>
+            </div>
+            <div class="transaction">
+                <div class="outgoing">
+                    <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
+                </div>
+                <h4>Netflix</h4>
+                <p class="amt">-$20</p>
+            </div>
+            <div class="transaction">
+                <div class="outgoing">
+                    <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
+                </div>
+                <h4>Furniture</h4>
+                <p class="amt">-$1200</p>
+            </div>
+    </div>
+            
         <div id="analytics-div">
             <h3>May 2023</h3>
             <button id="weeks">Weeks</button>

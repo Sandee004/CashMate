@@ -1,26 +1,3 @@
-/*var uniqueId = uuidv4(); // Generate a unique ID using the UUID library
-var uniqueLink = 'https://example.com/' + uniqueId; // Append the unique ID to the base URL
-
-//Display the unique link
-var linkContainer = document.getElementById('linkContainer');
-linkContainer.textContent = uniqueLink
-
-// Generate QR code
-var qr = new QRious({
-    element: document.getElementById('qrcode'),
-    value: uniqueLink,
-    size: 128
-});
-
-// Function to generate a v4 UUID
-function uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0,
-            v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
-}
-*/
 function generateUniqueNumber() {
   var randomNumber = '';
   var digits = '0123456789';
@@ -45,6 +22,17 @@ var qr = new QRious({
 
 document.getElementById('acc-no').textContent = uniqueNumber
 
+/*function copyToClipboard(text) {
+    const el = document.createElement('textarea');
+    el.value = text;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('Account number copied to clipboard!');
+}*/
+
+
 function copyToClipboard(text) {
     const el = document.createElement('textarea');
     el.value = text;
@@ -54,3 +42,13 @@ function copyToClipboard(text) {
     document.body.removeChild(el);
     alert('Account number copied to clipboard!');
 }
+
+// Function to handle clipboard icon click
+function handleClipboardClick() {
+    const accountNumber = document.getElementById('acc-no').textContent;
+    copyToClipboard(accountNumber);
+}
+
+// Attach event listener to clipboard icon
+const clipboardIcon = document.getElementById('clipboard');
+clipboardIcon.addEventListener('click', handleClipboardClick);
