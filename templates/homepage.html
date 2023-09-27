@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Homepage</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
     <script src="https://kit.fontawesome.com/6bd9574680.js" crossorigin="anonymous"></script>
@@ -19,8 +19,7 @@
             <span class="virtual">VIRTUAL</span>
             <span id="cvv">1234</span>
         </p>
-            <!--p id="card-number">{{card_no}}</p-->
-            <p id="card-number" data-full-number="{{card_no}}"></p>
+        <p id="card-number" data-full-number="{{card_no}}"></p>
         
         <div class="icon">
             <button class="clipboardBtn">
@@ -35,52 +34,32 @@
     <div class="balance">
         <p class="total">TOTAL BALANCE</p>
         <p class="currency">
-            <span class="bal">63420.68</span>
+            <span class="bal">{{balance}}</span>
             <span>USD</span>
         </p>
-        <a href="{{url_for('send')}}" class="send">Send</a>
+        <a href="{{url_for('send', user_id=user_id)}}" class="send">Send</a>
         <a href="{{url_for('receive')}}" class="receive">Receive</a>
     </div>
 
     <div class="footer">
         <button id="transactions">Transactions</button>
         <button id="analytics">Analytics</button>
-        <div id="transactions-div">
-            <div class="transaction">
-                <div class="outgoing">
-                    <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
-                </div>
-                <h4>Uber</h4>
-                <p class="amt">-$50</p>
+            
+    <div id="transactions-div">
+        {% if transactions %}
+    {% for transaction in transactions %}
+        <div class="transaction">
+            <div class="outgoing">
+                <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
             </div>
-            <div class="transaction">
-                <div class="outgoing">
-                    <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
-                </div>
-                <h4>McDonalds</h4>
-                <p class="amt">-$300</p>
-            </div>
-            <div class="transaction">
-                <div class="outgoing">
-                    <i class="fa-solid fa-arrow-down" style="color: #000000;"></i>
-                </div>
-                <h4>Salary</h4>
-                <p class="amt">+$550</p>
-            </div>
-            <div class="transaction">
-                <div class="outgoing">
-                    <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
-                </div>
-                <h4>Netflix</h4>
-                <p class="amt">-$20</p>
-            </div>
-            <div class="transaction">
-                <div class="outgoing">
-                    <i class="fa-solid fa-arrow-up" style="color: #000000;"></i>
-                </div>
-                <h4>Furniture</h4>
-                <p class="amt">-$1200</p>
-            </div>
+            <h4>{{ transaction.detail }}</h4>
+            <p class="amt">{{ transaction.amt }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No transactions</p>
+{% endif %}
+    </div>
     </div>
             
         <div id="analytics-div">

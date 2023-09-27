@@ -14,30 +14,43 @@
         <h3>Send Money</h3>
     </div>
 
-  <input type="text" class="number-input" readonly>
+    <form action="{{ url_for('send') }}" method="POST">
+    <div class="number-input-container">
+            <i class="fa-solid fa-dollar-sign" id="icon3" style="color: #000000;"></i>
+            <input type="number" class="number-input" name="amount" readonly required>
+            <i class="fa-solid fa-0" id="icon1" style="color: #000000;"></i>
+            <i class="fa-solid fa-0" id="icon2" style="color: #000000;"></i>
+        </div>
+
   <div class="keypad">
     <div class="row">
-      <button class="key" data-number="1">1</button>
-      <button class="key" data-number="2">2</button>
-      <button class="key" data-number="3">3</button>
+      <button type="button" class="key" data-number="1">1</button>
+      <button type="button" class="key" data-number="2">2</button>
+      <button type="button" class="key" data-number="3">3</button>
     </div>
     <div class="row">
-      <button class="key" data-number="4">4</button>
-      <button class="key" data-number="5">5</button>
-      <button class="key" data-number="6">6</button>
+      <button type="button" class="key" data-number="4">4</button>
+      <button type="button" class="key" data-number="5">5</button>
+      <button type="button" class="key" data-number="6">6</button>
     </div>
     <div class="row">
-      <button class="key" data-number="7">7</button>
-      <button class="key" data-number="8">8</button>
-      <button class="key" data-number="9">9</button>
+      <button type="button" class="key" data-number="7">7</button>
+      <button type="button" class="key" data-number="8">8</button>
+      <button type="button" class="key" data-number="9">9</button>
     </div>
     <div class="row">
-      <button class="key"></button>
-      <button class="key" data-number="0">0</button>
-      <button class="key delete" data-number="delete">Delete</button>
+      <button type="button" class="key"></button>
+      <button type="button" class="key" data-number="0">0</button>
+      <button type="button" class="key delete" data-number="delete"><i class="fa-solid fa-delete-left" style="color: #000000;"></i></button>
     </div>
   </div>
-    <button class="send"><a>Send</a></button>
+
+          {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        
+            <button class="send" id="open-button" type="submit">Send</button>
+    </form>
     <script src="{{url_for('static', filename='send.js')}}"></script>
 </body>
 

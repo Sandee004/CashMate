@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Description</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='transaction_description.css') }}">
+    <script src="https://kit.fontawesome.com/6bd9574680.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="nav">
+        <a href="{{ url_for('homepage') }}"><i class="fa-solid fa-arrow-left" style="color: #000000;"></i></a>
+        <h3>Description</h3>
+    </div>
+    <form action="{{ url_for('transaction_description') }}" method="POST">
+        <div class="form-group">
+            <p>This is what is going to be shown in your transaction history on the homepage so keep it as brief as possible. It's to help make sorting through your transaction easier.</p>
+            <!--label for="transaction_description">Description:</label-->
+            <input type="text" name="transaction_description" placeholder="Details go here" id="transaction_description" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Confirm</button>
+            </div>
+    </form>
+</body>
+</html>

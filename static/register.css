@@ -41,3 +41,8 @@ ul, li{
     list-style-type: none;
     text-align: center;
 }
+a{
+    color: #63B76C;
+    font-weight: 600;
+    text-decoration: none;
+}
